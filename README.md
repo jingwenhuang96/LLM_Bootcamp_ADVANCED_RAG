@@ -19,10 +19,13 @@ This project provides a robust pipeline for preparing and embedding text data fo
    ```bash
    git clone https://github.com/IDEAS-Incubator/LLM_Bootcamp_ADVANCED_RAG
    ```
-2. **Create conda env**
+2. **Create conda env (Python 3.11 or 3.12 recommended)**
    ```bash
    conda create -n adrag python=3.12
+   conda activate adrag
    ```
+   **Note:** Some packages may have compatibility issues with Python 3.13+. If you encounter installation errors, try using Python 3.11 or 3.12.
+
 3. **Install dependencies:**
    ```bash
    pip install -r requirements.txt
