@@ -36,7 +36,7 @@ Original question: {question}
 Perspective questions:"""
 
 prompt = PromptTemplate.from_template(multi_query_template)
-llm = OllamaLLM(model="llama3.2")
+llm = OllamaLLM(model=os.getenv("OLLAMA_MODEL", "llama3"))
 
 generate_perspectives_chain = (
     {"question": RunnablePassthrough()} | prompt | llm | StrOutputParser()

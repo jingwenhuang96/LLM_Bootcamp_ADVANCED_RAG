@@ -63,7 +63,7 @@ Context:
 Question: {question}
 """
 
-llm = OllamaLLM(model="llama3.2")  # or any model you have installed
+llm = OllamaLLM(model=os.getenv("OLLAMA_MODEL", "llama3"))  # or any model you have installed
 
 
 def format_docs(docs):
