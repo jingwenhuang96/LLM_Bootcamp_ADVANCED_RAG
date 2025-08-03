@@ -54,7 +54,7 @@ Original question: {question}
 Perspective questions:"""
 
 # Initialize LLM and chains
-llm = OllamaLLM(model="llama3.2")
+llm = OllamaLLM(model=os.getenv("OLLAMA_MODEL", "llama3"))
 
 hyde_prompt = PromptTemplate.from_template(hyde_template)
 stepback_prompt = PromptTemplate.from_template(stepback_template)

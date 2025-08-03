@@ -35,7 +35,7 @@ Question: {question}
 Hypothetical document:"""
 
 prompt = PromptTemplate.from_template(hyde_template)
-llm = OllamaLLM(model="llama3.2")
+llm = OllamaLLM(model=os.getenv("OLLAMA_MODEL", "llama3"))
 
 generate_hypothetical_doc_chain = (
     {"question": RunnablePassthrough()} | prompt | llm | StrOutputParser()

@@ -24,7 +24,7 @@ print(f"Loaded {len(docs)} documents")
 
 # Step 2: Create summaries
 print("\nStep 2: Creating summaries...")
-llm = OllamaLLM(model="llama3.2")
+llm = OllamaLLM(model=os.getenv("OLLAMA_MODEL", "llama3"))
 
 summary_prompt = ChatPromptTemplate.from_messages(
     [

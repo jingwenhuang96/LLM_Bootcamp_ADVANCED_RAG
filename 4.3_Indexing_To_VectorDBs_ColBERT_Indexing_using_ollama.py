@@ -96,7 +96,7 @@ def colbert_retrieval(query: str, k: int = 3) -> List[Document]:
 
 # Step 5: Create the full chain
 print("\nStep 5: Creating the full chain...")
-llm = OllamaLLM(model="llama3.2")
+llm = OllamaLLM(model=os.getenv("OLLAMA_MODEL", "llama3"))
 
 template = """Answer the question based on the following context. \
 The context has been retrieved using a token-level matching approach. \

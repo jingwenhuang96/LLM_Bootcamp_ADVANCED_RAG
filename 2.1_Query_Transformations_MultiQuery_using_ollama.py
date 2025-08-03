@@ -98,7 +98,7 @@ def retrieve_with_perspectives(original_question):
 
 # ---- STEP 4: RUN ----
 
-question = "What are the main types of cancer?"
+question = "What are the key components and challange in cancer treatment?"
 relevant_docs = retrieve_with_perspectives(question)
 
 # Format + LLM call

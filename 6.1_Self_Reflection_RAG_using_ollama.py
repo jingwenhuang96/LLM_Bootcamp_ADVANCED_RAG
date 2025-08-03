@@ -24,7 +24,7 @@ embedding_model = OllamaEmbeddings(model="nomic-embed-text")
 vectorstore = Chroma.from_documents(doc_splits, embedding=embedding_model)
 retriever = vectorstore.as_retriever()
 
-llm = OllamaLLM(model="llama3.2")
+llm = OllamaLLM(model=os.getenv("OLLAMA_MODEL", "llama3"))
 
 # ---- Prompt templates ----
 

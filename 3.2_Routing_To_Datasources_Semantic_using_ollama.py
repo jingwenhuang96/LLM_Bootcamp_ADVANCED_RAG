@@ -63,7 +63,7 @@ def prompt_router(input):
 
 
 # Step 4: Create the full chain
-llm = OllamaLLM(model="llama3.2")
+llm = OllamaLLM(model=os.getenv("OLLAMA_MODEL", "llama3"))
 
 chain = (
     {"query": RunnablePassthrough()}

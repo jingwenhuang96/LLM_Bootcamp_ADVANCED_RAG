@@ -35,7 +35,7 @@ Specific question: {question}
 Stepback question:"""
 
 prompt = PromptTemplate.from_template(stepback_template)
-llm = OllamaLLM(model="llama3.2")
+llm = OllamaLLM(model=os.getenv("OLLAMA_MODEL", "llama3"))
 
 generate_stepback_chain = (
     {"question": RunnablePassthrough()} | prompt | llm | StrOutputParser()

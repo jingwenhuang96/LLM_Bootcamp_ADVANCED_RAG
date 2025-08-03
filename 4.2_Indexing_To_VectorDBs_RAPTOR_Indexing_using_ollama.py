@@ -46,7 +46,7 @@ print(f"Created hierarchical splits with {len(hierarchical_splits)} levels")
 
 # Step 3: Create abstractive summaries for each level
 print("\nStep 3: Creating abstractive summaries...")
-llm = OllamaLLM(model="llama3.2")
+llm = OllamaLLM(model=os.getenv("OLLAMA_MODEL", "llama3"))
 embedding_model = OllamaEmbeddings(model="nomic-embed-text")
 
 # Ultra-concise prompt for faster summarization
